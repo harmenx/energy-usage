@@ -1,8 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders all components', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const paginationElement = screen.getByTestId('pagination');
+  const uploadForm = screen.getByTestId('upload-form');
+  const uploadHistory = screen.getByTestId('upload-history');
+
+  expect(paginationElement).toBeInTheDocument();
+  expect(uploadForm).toBeInTheDocument();
+  expect(uploadHistory).toBeInTheDocument();
 });
